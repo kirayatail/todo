@@ -1,6 +1,7 @@
 {
   "name": "todo",
   "version": "1.0.0",
+  "repository": "https://github.com/kirayatail/todo",
   "description": "",
   "exports": "./index.js",
   "bin": {
@@ -11,8 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Max Witt",
+  "license": "MIT",
   "dependencies": {
     "commander": "^12.0.0",
     "open": "^10.1.0"
