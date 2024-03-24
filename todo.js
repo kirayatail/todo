@@ -1,24 +1,6 @@
-import fs from "node:fs";
-import os from "node:os";
-import path from "node:path";
-import open from 'open';
+import { open } from "./open.js";
 import { exec } from "node:child_process";
-
-const filename = path.join(os.homedir(), "todo.txt");
-
-if (!fs.existsSync(filename)) {
-  fs.writeFileSync(filename, "");
-}
-
-const file = (fn) => {
-  const list = fs
-    .readFileSync(filename, "utf-8")
-    .trim()
-    .split(/[\r\n]+/)
-    .filter((i) => i !== "");
-  const newList = fn(list);
-  fs.writeFileSync(filename, newList.join("\n"));
-};
+import { file, filename } from "./file.js";
 
 export const show = () => {
   file((list) => {
@@ -32,7 +14,7 @@ export const show = () => {
 };
 export const push = (name, opts) => {
   file((list) => {
-    if (opts.next) {
+    if (opts?.next) {
       const first = list[0];
       const rest = list.slice(1);
       return [first, name, ...rest];
