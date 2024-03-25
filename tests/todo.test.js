@@ -160,11 +160,10 @@ describe("Todo functions", () => {
         result = path;
       })
       edit();
-
+      
       expect(result).toBe('testpath')
-    })
-
-    test('Edit without editor set', () => {
+    });
+    test('Edit with editor set', () => {
       let result = '';
       vi.stubEnv('EDITOR', 'myFavEditor')
       vi.spyOn(file, 'filename', 'get').mockReturnValue('testpath');
@@ -175,6 +174,6 @@ describe("Todo functions", () => {
       edit();
       
       expect(result).toBe('${EDITOR} testpath')
-    })
+    });
   })
 });
