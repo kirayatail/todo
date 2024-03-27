@@ -1,5 +1,7 @@
 # todo CLI
 
+[![Coverage Status](https://coveralls.io/repos/github/kirayatail/todo/badge.svg?branch=main)](https://coveralls.io/github/kirayatail/todo?branch=main)
+
 A very simple file-based ToDo app for your command line.
 
 The app uses a couple of simple commands to perform the most popular tasks, 
