@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import { program } from './command.js';
+import { program } from './src/command.js';
 program.parse();

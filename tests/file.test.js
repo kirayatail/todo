@@ -1,6 +1,6 @@
 import { describe, test, expect, vi } from "vitest";
 import fs from "node:fs";
-import { file, filename } from "../file";
+import { file, filename } from "../src/file";
 
 const fsMock = vi.hoisted(() => ({
   default: {

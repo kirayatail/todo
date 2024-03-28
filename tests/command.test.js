@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test, vi } from "vitest";
-import { program } from "../command";
+import { program } from "../src/command";
 
 const todoMocks = vi.hoisted(() => ({
   show: vi.fn(),
@@ -9,7 +9,7 @@ const todoMocks = vi.hoisted(() => ({
   pop: vi.fn(),
   edit: vi.fn(),
 }));
-vi.mock("../todo.js", () => todoMocks);
+vi.mock("../src/todo.js", () => todoMocks);
 
 const prgm = (str) => {
   const params = ["node index.js", str].join(" ").trim().split(" ");

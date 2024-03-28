@@ -1,7 +1,7 @@
 import { describe, test, expect, vi, beforeEach } from "vitest";
-import { cue, edit, list, pop, push, show } from "../todo";
-import * as open from "../open";
-import * as file from "../file";
+import { cue, edit, list, pop, push, show } from "../src/todo";
+import * as open from "../src/open";
+import * as file from "../src/file";
 
 const fileMocks = vi.hoisted(() => ({
   file: vi.fn(),
@@ -14,8 +14,8 @@ const processMock = vi.hoisted(() => ({
   exec: vi.fn(),
 }))
 
-vi.mock("../file.js", () => fileMocks);
-vi.mock("../open.js", () => openMock);
+vi.mock("../src/file.js", () => fileMocks);
+vi.mock("../src/open.js", () => openMock);
 vi.mock("node:child_process", () => processMock);
 
 const logSpy = vi.spyOn(global.console, "log");
