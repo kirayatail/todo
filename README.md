@@ -50,6 +50,8 @@ Aliases: `todo create`, `todo new`
 
 Create a new task at the bottom of the list
 
+Aliases: `todo queue`, `todo last`
+
 ### todo pop
 
 Removes the current task from the list and sets the next one in line as current

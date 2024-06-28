@@ -30,6 +30,7 @@ program
 
 program
   .command("cue")
+  .aliases(['queue', 'last'])
   .description("Add a task to the bottom of the stack")
   .argument("<name...>", "name of the task to add", join)
   .action(cue);
