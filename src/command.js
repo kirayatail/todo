@@ -10,9 +10,21 @@ const join = (a, b) => {
 program.name("todo").description("Stack based todo app in your shell");
 
 program
-  .command("show", { isDefault: true })
+  .command("show")
   .description("Print current task (same as running todo without any argument)")
   .action(show);
+
+program
+  .command("default", {isDefault: true})
+  .description("Quick action to either show or push an item")
+  .argument("[name...]", "if used, a task will be added. Omit and the current task will be displayed", join)
+  .action((name, opts) => {
+    if (name.length === 0) {
+      show();
+    } else {
+      push(name, opts)
+    }
+  });
 
 program
   .command("list")

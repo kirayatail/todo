@@ -25,11 +25,17 @@ making it easy to follow the structure where an incoming task takes immediate
 precedence. Secondary commands for queueing tasks as the next in priority 
 (without modifying the current task), or last in priority are available.
 
-### todo
+### todo [name]
 
-Display the current task. Remind yourself of what you're (supposed to be) doing
+Default action. 
 
-Aliases: `todo show`
+**Without parameters:** Display the current task. Remind yourself of what you're (supposed to be) doing. Shortcut for `todo show`
+
+**With parameters:** Create a new task. Shortcut for `todo push`
+
+### todo show
+
+Display the task at the top of the list. A static message will be displayed if the list is empty, no error will be thrown.
 
 ### todo list
 
@@ -37,7 +43,7 @@ Show all tasks in a list
 
 Aliases: `todo ls`
 
-### todo push <name>
+### todo push \<name\>
 
 Create a new task and set it as the current task, pushing all other tasks 
 down in priority.
@@ -46,7 +52,7 @@ Flag `-n, --next`, will set the new task as priority 2.
 
 Aliases: `todo create`, `todo new`
 
-### todo cue <name>
+### todo cue \<name\>
 
 Create a new task at the bottom of the list
 

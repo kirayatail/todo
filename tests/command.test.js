@@ -25,6 +25,12 @@ describe("Program", () => {
     prgm("show");
     expect(todoMocks.show).toHaveBeenCalledTimes(2);
   });
+  test("Default function with a new item", () => {
+    prgm("here's a new item")
+    expect(todoMocks.push.mock.calls[0]).toEqual(
+      expect.arrayContaining(["here's a new item", {}])
+    );
+  })
   test("List", () => {
     prgm("list");
     prgm("ls");
