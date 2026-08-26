@@ -19,7 +19,6 @@ vi.mock("../src/open.js", () => openMock);
 vi.mock("node:child_process", () => processMock);
 
 const logSpy = vi.spyOn(global.console, "log");
-const openSpy = vi.spyOn(open, "open");
 
 describe("Todo functions", () => {
   beforeEach(() => vi.resetAllMocks());
@@ -71,7 +70,7 @@ describe("Todo functions", () => {
 
       list();
 
-      expect(logSpy).toHaveBeenCalledWith("First item\nSecond item");
+      expect(logSpy).toHaveBeenCalledWith("- First item\n- Second item");
     });
   });
 

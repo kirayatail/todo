@@ -40,7 +40,7 @@ export const list = () => {
     if (list.length === 0) {
       console.log("*");
     } else {
-      console.log(list.join("\n"));
+      console.log(`- ${list.join("\n- ")}`);
     }
     return list;
   });
